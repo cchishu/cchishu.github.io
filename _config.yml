@@ -1,0 +1,21 @@
+title: Your Site Title
+email: your-email@example.com
+description: > # this means to ignore newlines until "baseurl:"
+  Write a short description of your site here.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://yourdomain.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima # or any other theme you might be using
+
+# Navigation settings
+include:
+  - _pages
+
+# _config.yml
+permalink: /:categories/:year/:month/:day/:title.html
+
+
+future: true
+

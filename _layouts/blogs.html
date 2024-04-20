@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>{{ page.title | default: site.title }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
+		<style>
+			.post-listing {
+				display: flex;
+				flex-direction: column;
+			}
+			.post-item {
+				display: flex;
+				align-items: flex-start;
+				margin-bottom: 20px;
+				position: relative;
+			}
+			.post-date {
+				position: absolute;
+				top: 0;
+				right: 0;
+				font-size: 0.8em;
+				color: #666;
+			}
+			.post-image {
+				flex-shrink: 0;
+				width: 120px;
+				height: 80px;
+				margin-right: 20px;
+			}
+			.post-image img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+			.post-content {
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="inner">
+					<a href="#" class="image avatar"><img src="images/avatar.jpg" alt="" /></a>
+					<h1><strong>Chi Shu's Website</strong></h1>
+					<!-- Include Sidebar Here -->
+					{% include sidebar.html %}
+				</div>
+			</header>
+
+     <!-- Main Content Area -->
+	 <div id="main">
+        <!-- Posts List -->
+        <section class="post-listing">
+            {% assign sorted_posts = site.posts | sort: 'date' | reverse %}
+            {% for post in sorted_posts %}
+                <div class="post-item">
+                    <div class="post-date">
+                        {{ post.date | date: "%b %-d, %Y" }}
+                    </div>
+                    <div class="post-image">
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                    </div>
+                    <div class="post-content">
+                        <h2 class="post-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+
+    </div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
