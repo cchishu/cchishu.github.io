@@ -34,17 +34,17 @@ Jekyll 上有许多模板，https://jekyllrb.com/resources/，拿来便可，开
 
 0. 可以先想想自己喜欢的 html 网页长啥样。一些可以下载模板的 html 网页 https://html5up.net/
 
-1. 首先就是安装 Jekyll，这步官网查询即可，可以按官网教程操作，做到生成网页这步就好了。也可以看看知乎，知乎不少人介绍，可以先把他们所说的注册 github 账号跳过，我们 focus 在如何安装 Jekyll 就好。
-
-   用 terminal 进入对应你想进入的文件夹即可，在 terminal 中输入：
+1. 首先就是安装 Jekyll，这步官网查询即可，可以按官网教程操作，做到生成网页这步就好了。也就是用 terminal 进入对应你想进入的文件夹即可，在 terminal 中输入：
 
    > bundle exec jekyll serve
 
-   这一步 terminal 会自动生成网页，在浏览器中输入输入 http://localhost:4000/ 即可查看简陋网站。
+   这一步 terminal 会自动生成网页，在浏览器中输入 http://localhost:4000/ 即可查看简陋网站。这步可以参考知乎，知乎不少人介绍，可以先把他们所说的注册 github 账号跳过，我们 focus 在如何安装 Jekyll 就好。
+
+   
 
 2. **了解目录结构**
 
-   个人认为这步至关重要。只要了解目录结构，就可以快速搭建个人主页，不管用 GPT 还是引用他人文件。在第一步后，可以看到对应目录生成文件，当然它们比较简陋，我们这时要是使其变得有序，了解各个文件作用。我个人按如下方式排序
+   **个人认为这步至关重要。**只要了解目录结构，就可以快速搭建个人主页，不管用 GPT 还是引用他人文件。在第一步后，可以看到对应目录生成文件，当然它们比较简陋，我们这时要是使其变得有序，了解各个文件作用。我个人按如下方式排序
 
    - your-site/
      - _config.yml
@@ -60,14 +60,54 @@ Jekyll 上有许多模板，https://jekyllrb.com/resources/，拿来便可，开
        - lecturenotes.md
        - publications.md
        - blog.md
+     - _site/
+     - _includes/
+       - navigation.html
      - assets/
+     - images/
      - index.md
 
    **问题来了，如何看到我这样的目录或者是类似目录？**
 
-   
+   - 一些文件不必去管，诸如 _config.yml Gemfile 这类配置文件；
+   - _posts/, _site/ 这样的文件夹生成自带，短时不需要管
+   - _layouts/, _pages/, assets/, images/, _includes/ 这几个文件夹鼠标右键“新建文件夹”即可， index.md 用**记事本**写一下就好了。
 
-3. 这是
+3. 如何快速生成网页？
+
+   说了那么多，进入速成网页阶段。在第零步中对应网站下载自己喜欢模版，解压，点开解压后的 index.html 文件，精美网页便呈现在浏览器中。还会看到 assets/ images/ 此类文件夹和对应文件。
+
+   然后我们把这个网页挪到 _layouts 文件夹中，改名成 default.html,  assets/, images/ 这两个文件夹放到你喜欢的根目录 your-site/ 就好了。（在 _layouts/） 文件夹前一级目录。 再做新建记事本, 输入
+
+   “”
+
+   \---
+
+   layout: default
+
+   title: Home Page
+
+   \---
+
+   Some page content here
+
+   “"（不包括引号）
+
+   在浏览器中输入 http://localhost:4000/ ，大概率你可以看到你复制了这个网站。然后把网站调成 Jekyll 对应格式即可。
+
+   ***不会调？？？***
+
+   没事，我也不会。直接问 GPT3.5：
+
+   > I want to use the Jekyll to help me build my homepage. I have a index.html file now. Do help me transfer into Jekyll specific Liquid format. Show me full code. Here is the html file content:
+
+   把 html 内容复制进去就可以了。GPT 吭呲吭呲给你打黑工，复制它到代码，完全替代 html 文件。
+
+   刷新浏览器，看看会不会有什么变化。
+
+4. 此时你网页已经成型，然后便是做一些简单分目录。
+
+5. 
 
 
 
