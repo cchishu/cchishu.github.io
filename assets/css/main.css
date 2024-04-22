@@ -3248,3 +3248,8 @@ input, select, textarea {
 }
 
 
+.motto {
+	font-style: italic;
+	margin-bottom: 40px;
+  }
+  

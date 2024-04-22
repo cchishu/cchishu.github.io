@@ -12,10 +12,16 @@
 		<!-- Header -->
 			<header id="header">
 				<div class="inner">
+
+                	<!-- Random Motto -->
+                	<div id="motto-display" class="motto" ></div>
+
+					<!-- avatar -->
 					<a href="{{ '/' | relative_url }}" class="image avatar">
 						<img src="{{ 'images/avatar.png' | relative_url }}" alt="" />
 					</a>
-					<h1><strong>Chi Shu's Website</strong></h1>
+					<h1><strong>Chi Shu's Homepage</strong></h1>
+
 					<!-- Include Sidebar Here -->
 					{% include sidebar.html %}
 				</div>
@@ -82,6 +88,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="/assets/js/randomMotto.js"></script>
 
 	</body>
 </html>
